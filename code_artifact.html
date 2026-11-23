@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Наталья Герасимова | Консультант по питанию и оздоровлению рациона</title>
+  
+  <!-- Шрифты Google Fonts: Cormorant Garamond (элегантная органика) и Inter (читабельность) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Иконки Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            stone: {
+              50: '#FAF9F6',
+              100: '#F4F2EC',
+              200: '#E7E4DC',
+              300: '#D5D1C6',
+              800: '#2C2B29',
+              900: '#1D1C1B'
+            },
+            sage: {
+              50: '#F4F7F4',
+              100: '#E5EDE5',
+              200: '#CBDCCB',
+              500: '#5E7963',
+              600: '#4E6753',
+              700: '#3D5241',
+              800: '#2F4033'
+            },
+            terracotta: {
+              500: '#C27D60'
+            }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'serif'],
+            sans: ['"Inter"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Плавный скролл */
+    html {
+      scroll-behavior: smooth;
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    /* Тонкие тени и мягкие размытия */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    
+    /* Стилизация скроллбара отзывов на мобильных */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+
+<body class="bg-stone-100 text-stone-800 font-sans antialiased min-h-screen selection:bg-sage-200">
+
+  <!-- Основной контейнер (max-w-[480px] центрирован под мобильный вид) -->
+  <main class="max-w-[480px] mx-auto min-h-screen px-4 py-8 flex flex-col gap-6 sm:px-6">
+
+    <!-- 1. ШАПКА / ПРОФИЛЬ -->
+    <header class="text-center flex flex-col items-center">
+      <!-- Портретное фото в оливковом платье -->
+      <div class="relative w-32 h-36 mb-3.5">
+        <div class="w-full h-full rounded-[2rem] ring-2 ring-sage-500/35 p-1 shadow-md bg-white overflow-hidden">
+          <img 
+            src="568A5079.jpg" 
+            alt="Наталья Герасимова — консультант по питанию" 
+            class="w-full h-full rounded-[1.75rem] object-cover object-top bg-stone-200"
+            onerror="this.onerror=null; this.src='https://placehold.co/320x360/E5EDE5/3D5241?text=Наталья+Герасимова';"
+          >
+        </div>
+        <span class="absolute -bottom-1 -right-1 bg-sage-600 text-white p-1.5 rounded-full text-xs shadow-md border-2 border-stone-100" title="Дипломированный специалист">
+          <i class="fa-solid fa-check"></i>
+        </span>
+      </div>
+
+      <!-- Имя и специализация -->
+      <h1 class="font-serif text-3xl font-bold tracking-tight text-stone-900">
+        Наталья Герасимова
+      </h1>
+      <p class="text-sage-700 font-semibold text-xs tracking-wider uppercase mt-1">
+        Консультант по питанию и оздоровлению рациона
+      </p>
+
+      <!-- Бейдж материнства -->
+      <div class="inline-flex items-center gap-1.5 mt-2.5 px-3.5 py-1 bg-stone-200/75 rounded-full text-[11px] font-medium text-stone-700">
+        <i class="fa-solid fa-heart text-terracotta-500 text-[10px]"></i>
+        <span>Мама двоих мальчиков (6 лет и младенец)</span>
+      </div>
+
+      <!-- Bio с акцентом на реальную жизнь семьи -->
+      <p class="text-stone-700 text-xs sm:text-sm mt-3 px-1 leading-relaxed font-normal">
+        Помогаю женщинам обрести гармонию с едой и телом — без жёстких диет, подсчёта калорий и чувства вины. 
+        Как мама двоих мальчиков, я выстраиваю здоровый рацион так, чтобы он легко вписывался в реальную жизнь всей семьи и возвращал лёгкость и бодрость без многочасового стояния у плиты.
+      </p>
+
+      <!-- Главная кнопка перехода к услугам + быстрые ссылки -->
+      <div class="w-full mt-5 space-y-2">
+        <a href="#services" 
+           class="w-full flex items-center justify-center gap-2 bg-sage-600 hover:bg-sage-700 text-white py-3 px-4 rounded-xl text-sm font-semibold shadow-sm active:scale-95 transition-all">
+          <span>Выбрать формат работы</span>
+          <i class="fa-solid fa-arrow-down text-xs"></i>
+        </a>
+
+        <div class="flex gap-2 w-full">
+          <a href="https://t.me/healthy_gerasimova" target="_blank" rel="noopener noreferrer" 
+             class="flex-1 flex items-center justify-center gap-2 bg-[#2AABEE] text-white py-2.5 px-3 rounded-xl text-xs sm:text-sm font-medium shadow-sm hover:brightness-105 active:scale-95 transition-all">
+            <i class="fa-brands fa-telegram text-base"></i>
+            <span>Telegram</span>
+          </a>
+
+          <a href="https://instagram.com/healthy_gerasimova" target="_blank" rel="noopener noreferrer"
+             class="flex-1 flex items-center justify-center gap-2 bg-gradient-to-tr from-[#FD1D1D] via-[#E1306C] to-[#833AB4] text-white py-2.5 px-3 rounded-xl text-xs sm:text-sm font-medium shadow-sm hover:brightness-105 active:scale-95 transition-all">
+            <i class="fa-brands fa-instagram text-base"></i>
+            <span>Instagram</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- 2. ФИЛОСОФИЯ И ЦЕННОСТИ -->
+    <section class="glass-card rounded-2xl p-5 border border-stone-200/70 shadow-sm">
+      <div class="flex items-center gap-2 text-sage-700 font-semibold text-xs tracking-wider uppercase mb-2">
+        <i class="fa-regular fa-heart"></i>
+        <span>Философия подхода</span>
+      </div>
+      <blockquote class="font-serif italic text-lg text-stone-900 border-l-2 border-sage-500 pl-3 my-2 leading-snug">
+        «Здоровье — это не про идеальную диету, а про баланс, осознанность и уважение к себе! Здоровье и удовольствие от еды не исключают друг друга.»
+      </blockquote>
+    </section>
+
+    <!-- 3. РЕЗУЛЬТАТЫ КЛИЕНТОВ -->
+    <section class="bg-white rounded-2xl p-5 border border-stone-200/80 shadow-sm">
+      <h2 class="font-serif text-xl font-bold text-stone-900 mb-3 flex items-center justify-between">
+        <span>Мои клиенты</span>
+        <span class="text-xs font-sans font-normal text-sage-600 bg-sage-50 px-2.5 py-0.5 rounded-full border border-sage-100">Без ограничений</span>
+      </h2>
+
+      <ul class="space-y-2.5 text-xs sm:text-sm text-stone-700">
+        <li class="flex items-start gap-2.5">
+          <span class="w-5 h-5 rounded-full bg-sage-100 text-sage-700 flex items-center justify-center shrink-0 mt-0.5 text-xs">
+            <i class="fa-solid fa-check"></i>
+          </span>
+          <span>приходят к <strong>стабильному комфортному весу</strong> (без ограничений)</span>
+        </li>
+        <li class="flex items-start gap-2.5">
+          <span class="w-5 h-5 rounded-full bg-sage-100 text-sage-700 flex items-center justify-center shrink-0 mt-0.5 text-xs">
+            <i class="fa-solid fa-bolt"></i>
+          </span>
+          <span>избавляются от <strong>хронической усталости</strong></span>
+        </li>
+        <li class="flex items-start gap-2.5">
+          <span class="w-5 h-5 rounded-full bg-sage-100 text-sage-700 flex items-center justify-center shrink-0 mt-0.5 text-xs">
+            <i class="fa-solid fa-sun"></i>
+          </span>
+          <span>чувствуют <strong>прилив энергии</strong> на протяжении всего дня</span>
+        </li>
+        <li class="flex items-start gap-2.5">
+          <span class="w-5 h-5 rounded-full bg-sage-100 text-sage-700 flex items-center justify-center shrink-0 mt-0.5 text-xs">
+            <i class="fa-solid fa-shield-heart"></i>
+          </span>
+          <span>укрепляют <strong>иммунитет</strong></span>
+        </li>
+        <li class="flex items-start gap-2.5">
+          <span class="w-5 h-5 rounded-full bg-sage-100 text-sage-700 flex items-center justify-center shrink-0 mt-0.5 text-xs">
+            <i class="fa-solid fa-seedling"></i>
+          </span>
+          <span>закладывают <strong>фундамент здоровья</strong> на долгие годы</span>
+        </li>
+      </ul>
+
+      <div class="mt-4 p-3 bg-sage-50 rounded-xl border border-sage-100 text-center">
+        <p class="text-xs italic font-medium text-sage-800">
+          «Как же я чувствую себя легко и здорово!»
+        </p>
+      </div>
+    </section>
+
+    <!-- 4. МОИ УСЛУГИ И ЦЕНЫ -->
+    <section id="services" class="space-y-4">
+      <div class="text-center mb-1">
+        <h2 class="font-serif text-2xl font-bold text-stone-900">Мои услуги и цены</h2>
+        <p class="text-xs text-stone-500 mt-0.5">Предлагаю Вам ознакомиться и выбрать подходящий вариант</p>
+      </div>
+
+      <!-- Карточка 1: КОНСУЛЬТАЦИЯ -->
+      <article class="bg-white rounded-2xl p-5 border border-stone-200/90 shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="flex justify-between items-center gap-2">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-sage-700 bg-sage-100/80 px-2.5 py-1 rounded-md">
+              Разовый разбор
+            </span>
+            <span class="font-serif text-2xl font-bold text-stone-900">
+              8 000 руб.
+            </span>
+          </div>
+
+          <h3 class="font-serif text-2xl font-bold text-stone-900 mt-2 uppercase tracking-wide">
+            Консультация
+          </h3>
+
+          <p class="text-xs font-bold uppercase tracking-wider text-stone-500 mt-3 mb-2.5">
+            Кому подойдёт?
+          </p>
+
+          <ul class="space-y-2 text-xs text-stone-700 leading-relaxed">
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-sage-500 mt-1.5 shrink-0"></span>
+              <span>Вы испытываете усталость, вялость и у Вас нет сил на любимые занятия и работу</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-sage-500 mt-1.5 shrink-0"></span>
+              <span>Вы хотите изменить питание, но не понимаете как это сделать</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-sage-500 mt-1.5 shrink-0"></span>
+              <span>Вы не знаете какие продукты покупать и что из них готовить</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-sage-500 mt-1.5 shrink-0"></span>
+              <span>Вы хотите понимать с чем связаны те или иные симптомы</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-sage-500 mt-1.5 shrink-0"></span>
+              <span>Вы готовы внедрять полученные рекомендации самостоятельно</span>
+            </li>
+          </ul>
+        </div>
+
+        <a href="https://t.me/healthy_gerasimova?text=Здравствуйте!%20Хочу%20записаться%20на%20консультацию" 
+           target="_blank" rel="noopener noreferrer"
+           class="mt-5 w-full bg-sage-600 hover:bg-sage-700 text-white text-center py-3 rounded-xl text-sm font-semibold tracking-wide transition shadow-sm active:scale-95 block">
+          Записаться на консультацию
+        </a>
+      </article>
+
+      <!-- Карточка 2: СОПРОВОЖДЕНИЕ -->
+      <article class="bg-gradient-to-b from-stone-50 to-white rounded-2xl p-5 border-2 border-sage-500/45 shadow-sm relative overflow-hidden flex flex-col justify-between">
+        <div class="absolute top-0 right-0 bg-sage-600 text-white text-[10px] uppercase font-bold tracking-wider px-3 py-1 rounded-bl-xl shadow-xs">
+          Глубокая работа
+        </div>
+
+        <div>
+          <div class="flex justify-between items-center gap-2 pr-24">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-sage-700 bg-sage-100/80 px-2.5 py-1 rounded-md">
+              Личное ведение
+            </span>
+          </div>
+
+          <div class="flex flex-wrap items-baseline justify-between gap-2 mt-2.5">
+            <h3 class="font-serif text-2xl font-bold text-stone-900 uppercase tracking-wide">
+              Сопровождение
+            </h3>
+            <span class="font-serif text-2xl font-bold text-stone-900">
+              15 000 ₽ <span class="font-sans text-xs font-medium text-stone-500">/ месяц</span>
+            </span>
+          </div>
+
+          <p class="text-xs font-bold uppercase tracking-wider text-stone-500 mt-3 mb-2.5">
+            Кому подойдёт?
+          </p>
+
+          <ul class="space-y-2 text-xs text-stone-700 leading-relaxed">
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-sage-600 mt-1.5 shrink-0"></span>
+              <span>Вы хотите изменить питание, но не понимаете с чего начать</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-sage-600 mt-1.5 shrink-0"></span>
+              <span>Вы не знаете какие продукты покупать и что из них готовить</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-sage-600 mt-1.5 shrink-0"></span>
+              <span>Вы переедаете сладкое</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-sage-600 mt-1.5 shrink-0"></span>
+              <span>Вы испытываете усталость, вялость по утрам, у вас нет сил на любимые занятия и работу</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-sage-600 mt-1.5 shrink-0"></span>
+              <span>Вы хотите сбросить лишний вес, без жестких ограничений</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-sage-600 mt-1.5 shrink-0"></span>
+              <span>Вы хотите понимать с чем связаны те или иные симптомы и избавиться от них</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-sage-600 mt-1.5 shrink-0"></span>
+              <span>Вы хотите внедрить новые привычки на всю жизнь</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="mt-5 pt-3 border-t border-stone-200/70">
+          <div class="flex items-center justify-between gap-2 mb-3">
+            <span class="text-xs text-stone-500">Формат:</span>
+            <span class="text-xs font-semibold text-stone-800 text-right">Индивидуальная работа и ежедневная поддержка</span>
+          </div>
+          <a href="https://t.me/healthy_gerasimova?text=Здравствуйте!%20Хочу%20узнать%20подробности%20и%20записаться%20на%20сопровождение" 
+             target="_blank" rel="noopener noreferrer"
+             class="w-full bg-stone-900 hover:bg-stone-800 text-white text-center py-3 rounded-xl text-sm font-semibold tracking-wide transition shadow-sm active:scale-95 block">
+            Узнать подробности и записаться
+          </a>
+        </div>
+      </article>
+    </section>
+
+    <!-- 5. ОБРАЗОВАНИЕ И КВАЛИФИКАЦИЯ (Галерея документов с увеличением) -->
+    <section class="bg-white rounded-2xl p-5 border border-stone-200/80 shadow-sm">
+      <div class="flex items-center justify-between mb-1">
+        <div class="flex items-center gap-2 text-sage-700 font-semibold text-xs tracking-wider uppercase">
+          <i class="fa-solid fa-graduation-cap"></i>
+          <span>Квалификация</span>
+        </div>
+        <span class="text-[11px] text-stone-400 flex items-center gap-1">
+          <i class="fa-solid fa-magnifying-glass-plus"></i>
+          <span>Нажмите на документ</span>
+        </span>
+      </div>
+      <h2 class="font-serif text-xl font-bold text-stone-900 mb-3">
+        Образование и квалификация
+      </h2>
+
+      <!-- Главный диплом (Кликабельный) -->
+      <button type="button"
+              onclick="openCertModal('IMG_7303_13439f.jpg', 'Диплом о профессиональной переподготовке', 'АНО ДПО «Академия интегративной нутрициологии «ПРО-Здоровье» — программа «Интегративная нутрициология» (720 ак. часов, рег. № 476, 05.09.2023)')"
+              class="w-full text-left p-3.5 bg-stone-50 hover:bg-sage-50/60 rounded-xl border border-stone-200 transition-all mb-3 group cursor-pointer">
+        <div class="flex items-center gap-3">
+          <!-- Превью диплома -->
+          <div class="w-16 h-12 rounded-lg overflow-hidden border border-stone-300 shrink-0 bg-emerald-50 relative shadow-xs">
+            <img src="IMG_7303_13439f.jpg" 
+                 alt="Диплом ПРО-Здоровье" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                 onerror="this.onerror=null; this.src='https://placehold.co/320x240/E5EDE5/3D5241?text=Диплом+720ч';">
+            <span class="absolute bottom-0.5 right-0.5 bg-stone-900/70 text-white text-[9px] px-1 rounded">
+              <i class="fa-solid fa-expand"></i>
+            </span>
+          </div>
+          <div class="flex-1 min-w-0">
+            <span class="text-[10px] uppercase font-bold text-sage-700 tracking-wide block">Диплом о проф. переподготовке</span>
+            <h4 class="font-semibold text-stone-900 text-sm leading-tight mt-0.5">
+              Интегративная нутрициология
+            </h4>
+            <p class="text-[11px] text-stone-600 mt-0.5 leading-snug">
+              АНО ДПО «Академия интегративной нутрициологии «ПРО-Здоровье» • 720 ак. часов • 05.09.2023
+            </p>
+          </div>
+        </div>
+      </button>
+
+      <!-- Сертификаты УОМ (Сетка с превью и открытием в модальном окне) -->
+      <p class="text-xs font-semibold text-stone-700 mb-2">
+        Сертификаты Университета образовательной медицины (УОМ):
+      </p>
+
+      <div class="grid grid-cols-1 gap-2.5 text-xs">
+        <!-- Сертификат 1 -->
+        <button type="button"
+                onclick="openCertModal('IMG_3292_13439f.jpg', 'Сертификат УОМ (2024)', 'Университет образовательной медицины — программа «Терапевтические продукты питания как альтернатива лекарствам» (50 академических часов, науч. рук. И. Мальцева)')"
+                class="w-full text-left p-2.5 rounded-xl bg-stone-50/80 hover:bg-sage-50/60 border border-stone-200/80 flex items-center gap-3 transition group cursor-pointer">
+          <div class="w-14 h-10 rounded-md overflow-hidden border border-stone-200 shrink-0 bg-purple-50 relative">
+            <img src="IMG_3292_13439f.jpg" 
+                 alt="Сертификат УОМ Терапевтические продукты" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                 onerror="this.onerror=null; this.src='https://placehold.co/280x200/F3E8FF/581C87?text=УОМ+2024';">
+          </div>
+          <div class="flex-1 min-w-0">
+            <p class="font-medium text-stone-800 leading-snug">«Терапевтические продукты питания как альтернатива лекарствам»</p>
+            <p class="text-stone-500 text-[11px] mt-0.5">50 ак. часов • 2024</p>
+          </div>
+          <i class="fa-solid fa-chevron-right text-stone-400 text-[10px] group-hover:text-sage-600"></i>
+        </button>
+
+        <!-- Сертификат 2 -->
+        <button type="button"
+                onclick="openCertModal('IMG_3252_13439f.jpg', 'Сертификат УОМ (03.12.2025)', 'Университет образовательной медицины — курс лекций «Осознанная беременность: забота о себе и малыше на каждом этапе» (16 академических часов)')"
+                class="w-full text-left p-2.5 rounded-xl bg-stone-50/80 hover:bg-sage-50/60 border border-stone-200/80 flex items-center gap-3 transition group cursor-pointer">
+          <div class="w-14 h-10 rounded-md overflow-hidden border border-stone-200 shrink-0 bg-indigo-900 relative">
+            <img src="IMG_3252_13439f.jpg" 
+                 alt="Сертификат УОМ Осознанная беременность" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                 onerror="this.onerror=null; this.src='https://placehold.co/280x200/312E81/FFFFFF?text=УОМ+2025';">
+          </div>
+          <div class="flex-1 min-w-0">
+            <p class="font-medium text-stone-800 leading-snug">«Осознанная беременность: забота о себе и малыше на каждом этапе»</p>
+            <p class="text-stone-500 text-[11px] mt-0.5">16 ак. часов • 03.12.2025</p>
+          </div>
+          <i class="fa-solid fa-chevron-right text-stone-400 text-[10px] group-hover:text-sage-600"></i>
+        </button>
+
+        <!-- Сертификат 3 -->
+        <button type="button"
+                onclick="openCertModal('IMG_7569_13439f.jpg', 'Сертификат УОМ (2023)', 'Университет образовательной медицины — практикум «Психосоматика женских заболеваний» (2023)')"
+                class="w-full text-left p-2.5 rounded-xl bg-stone-50/80 hover:bg-sage-50/60 border border-stone-200/80 flex items-center gap-3 transition group cursor-pointer">
+          <div class="w-14 h-10 rounded-md overflow-hidden border border-stone-200 shrink-0 bg-amber-50 relative">
+            <img src="IMG_7569_13439f.jpg" 
+                 alt="Сертификат УОМ Психосоматика женских заболеваний" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                 onerror="this.onerror=null; this.src='https://placehold.co/280x200/FEF3C7/92400E?text=УОМ+2023';">
+          </div>
+          <div class="flex-1 min-w-0">
+            <p class="font-medium text-stone-800 leading-snug">«Психосоматика женских заболеваний»</p>
+            <p class="text-stone-500 text-[11px] mt-0.5">Практикум • 2023</p>
+          </div>
+          <i class="fa-solid fa-chevron-right text-stone-400 text-[10px] group-hover:text-sage-600"></i>
+        </button>
+
+        <!-- Сертификат 4 -->
+        <button type="button"
+                onclick="openCertModal('IMG_7611_13439f.jpg', 'Сертификат УОМ (2023)', 'Университет образовательной медицины — марафон вкусов и ароматов «В поисках идеальных специй» (2023)')"
+                class="w-full text-left p-2.5 rounded-xl bg-stone-50/80 hover:bg-sage-50/60 border border-stone-200/80 flex items-center gap-3 transition group cursor-pointer">
+          <div class="w-14 h-10 rounded-md overflow-hidden border border-stone-200 shrink-0 bg-indigo-50 relative">
+            <img src="IMG_7611_13439f.jpg" 
+                 alt="Сертификат УОМ В поисках идеальных специй" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                 onerror="this.onerror=null; this.src='https://placehold.co/280x200/E0E7FF/3730A3?text=УОМ+2023';">
+          </div>
+          <div class="flex-1 min-w-0">
+            <p class="font-medium text-stone-800 leading-snug">«В поисках идеальных специй»</p>
+            <p class="text-stone-500 text-[11px] mt-0.5">Марафон вкусов и ароматов • 2023</p>
+          </div>
+          <i class="fa-solid fa-chevron-right text-stone-400 text-[10px] group-hover:text-sage-600"></i>
+        </button>
+      </div>
+    </section>
+
+    <!-- 6. ОТЗЫВЫ КЛИЕНТОВ (Карусель с выносками и навигацией) -->
+    <section class="space-y-3">
+      <div class="flex items-center justify-between">
+        <div>
+          <h2 class="font-serif text-2xl font-bold text-stone-900">Отзывы клиентов</h2>
+          <p class="text-xs text-stone-500">Реальные истории и впечатления</p>
+        </div>
+        <!-- Кнопки прокрутки карусели -->
+        <div class="flex items-center gap-1.5">
+          <button type="button" onclick="scrollReviews(-1)" aria-label="Предыдущий отзыв"
+                  class="w-8 h-8 rounded-full bg-white border border-stone-200 text-stone-600 hover:text-sage-700 hover:border-sage-300 flex items-center justify-center shadow-xs active:scale-95 transition">
+            <i class="fa-solid fa-chevron-left text-xs"></i>
+          </button>
+          <button type="button" onclick="scrollReviews(1)" aria-label="Следующий отзыв"
+                  class="w-8 h-8 rounded-full bg-white border border-stone-200 text-stone-600 hover:text-sage-700 hover:border-sage-300 flex items-center justify-center shadow-xs active:scale-95 transition">
+            <i class="fa-solid fa-chevron-right text-xs"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Горизонтальная прокрутка карточек-отзывов -->
+      <div id="reviewsTrack" class="flex gap-3 overflow-x-auto no-scrollbar pb-2 -mx-4 px-4 snap-x snap-mandatory scroll-smooth">
+        
+        <!-- Отзыв 1: Елена -->
+        <div class="w-[86%] sm:w-[340px] shrink-0 snap-center bg-white rounded-2xl p-4 border border-stone-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2.5">
+              <span class="font-semibold text-stone-900 text-sm">Елена</span>
+              <span class="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200 shrink-0">
+                -4,2 кг за неделю
+              </span>
+            </div>
+            <p class="text-xs text-stone-700 leading-relaxed">
+              «Я очень рада, что в последний момент "заскочила" к вам на FMD. По весу -4,2 за неделю — сейчас встала на весы и сама удивилась. Шла не столько за весом, сколько за здоровьем, хочу ввести на регулярной основе. Спасибо Наталье и девочкам за компанию и поддержку!»
+            </p>
+          </div>
+          <div class="mt-3 pt-2.5 border-t border-stone-100 flex items-center justify-between text-[11px] text-stone-400">
+            <span>Протокол FMD</span>
+            <span>🔥 ❤️</span>
+          </div>
+        </div>
+
+        <!-- Отзыв 2: Валерия -->
+        <div class="w-[86%] sm:w-[340px] shrink-0 snap-center bg-white rounded-2xl p-4 border border-stone-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2.5">
+              <span class="font-semibold text-stone-900 text-sm">Валерия</span>
+              <span class="text-[11px] font-bold text-sage-700 bg-sage-50 px-2.5 py-0.5 rounded-full border border-sage-200 shrink-0">
+                Едим всей семьёй
+              </span>
+            </div>
+            <p class="text-xs text-stone-700 leading-relaxed">
+              «Добилась тех целей, к которым шла в начале — похудение, меньшее употребление сладкого и кофе. Открыла для себя новые продукты, крупы теперь разные едим всей семьёй. Вы классный специалист, который знает очень много информации и готов её давать. Без вашего чуткого руководства я бы не справилась.»
+            </p>
+          </div>
+          <div class="mt-3 pt-2.5 border-t border-stone-100 flex items-center justify-between text-[11px] text-stone-400">
+            <span>Чуткое руководство</span>
+            <span>🙏 ✨</span>
+          </div>
+        </div>
+
+        <!-- Отзыв 3: Татьяна -->
+        <div class="w-[86%] sm:w-[340px] shrink-0 snap-center bg-white rounded-2xl p-4 border border-stone-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2.5">
+              <span class="font-semibold text-stone-900 text-sm">Татьяна</span>
+              <span class="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200 shrink-0">
+                -2,9 кг за 5 дней
+              </span>
+            </div>
+            <p class="text-xs text-stone-700 leading-relaxed">
+              «За 5 дней у меня -2,9 кг. Могу сказать, что было комфортно. Поняла, что овощи, бобовые и грибы дают нужную сытость, нужно только правильно их приготовить. Наталья, спасибо за рецепты — как минимум 3 я точно впишу в обычную жизнь. Стала меньше по объёмам, это видно по одежде.»
+            </p>
+          </div>
+          <div class="mt-3 pt-2.5 border-t border-stone-100 flex items-center justify-between text-[11px] text-stone-400">
+            <span>Ушли объёмы по одежде</span>
+            <span>😍 👏</span>
+          </div>
+        </div>
+
+        <!-- Отзыв 4: Анна -->
+        <div class="w-[86%] sm:w-[340px] shrink-0 snap-center bg-white rounded-2xl p-4 border border-stone-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2.5">
+              <span class="font-semibold text-stone-900 text-sm">Анна</span>
+              <span class="text-[11px] font-bold text-sage-700 bg-sage-50 px-2.5 py-0.5 rounded-full border border-sage-200 shrink-0">
+                Вкуснее и сытнее
+              </span>
+            </div>
+            <p class="text-xs text-stone-700 leading-relaxed">
+              «Ваш протокол проще, вкуснее и сытнее. Я вчера обошлась завтраком и обедом, вечером была тренировка, полёт отличный. Самочувствие отличное, необыкновенная лёгкость и кайф от отражения в зеркале.»
+            </p>
+          </div>
+          <div class="mt-3 pt-2.5 border-t border-stone-100 flex items-center justify-between text-[11px] text-stone-400">
+            <span>Энергия на тренировки</span>
+            <span>🥰 🔥</span>
+          </div>
+        </div>
+
+        <!-- Отзыв 5: Юлия -->
+        <div class="w-[86%] sm:w-[340px] shrink-0 snap-center bg-white rounded-2xl p-4 border border-stone-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2.5">
+              <span class="font-semibold text-stone-900 text-sm">Юлия</span>
+              <span class="text-[11px] font-bold text-sage-700 bg-sage-50 px-2.5 py-0.5 rounded-full border border-sage-200 shrink-0">
+                Идёт уже 3-й раз
+              </span>
+            </div>
+            <p class="text-xs text-stone-700 leading-relaxed">
+              «Прохожу протокол с Натальей 3-й раз. Первые два дня нужно перетерпеть, зато потом энергии становится больше, чувствую себя прекрасно и голод не сильно ощущается. На 6-й день лёгкость и приятный бонус на весах.»
+            </p>
+          </div>
+          <div class="mt-3 pt-2.5 border-t border-stone-100 flex items-center justify-between text-[11px] text-stone-400">
+            <span>Бонус на весах и тонус</span>
+            <span>🌸 👍</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Индикаторные точки карусели -->
+      <div id="reviewDots" class="flex justify-center gap-1.5 pt-1">
+        <span class="w-4 h-1.5 rounded-full bg-sage-600 transition-all"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-stone-300 transition-all"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-stone-300 transition-all"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-stone-300 transition-all"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-stone-300 transition-all"></span>
+      </div>
+    </section>
+
+    <!-- 7. ПОДВАЛ И КОНТАКТЫ -->
+    <footer class="mt-4 pt-6 pb-6 border-t border-stone-300 text-center flex flex-col items-center gap-3">
+      <p class="font-serif italic text-lg text-stone-800">
+        Сделайте первый шаг к отличному самочувствию
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-2.5 w-full">
+        <a href="https://t.me/healthy_gerasimova" target="_blank" rel="noopener noreferrer" 
+           class="flex-1 min-w-[140px] flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-white border border-stone-200 text-stone-800 hover:border-sage-400 hover:text-sage-700 text-xs font-semibold transition shadow-xs">
+          <i class="fa-brands fa-telegram text-[#2AABEE] text-base"></i>
+          <span>Написать в Telegram</span>
+        </a>
+        <a href="https://instagram.com/healthy_gerasimova" target="_blank" rel="noopener noreferrer" 
+           class="flex-1 min-w-[140px] flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-white border border-stone-200 text-stone-800 hover:border-sage-400 hover:text-sage-700 text-xs font-semibold transition shadow-xs">
+          <i class="fa-brands fa-instagram text-[#E1306C] text-base"></i>
+          <span>Instagram блог</span>
+        </a>
+      </div>
+
+      <p class="text-[11px] text-stone-500 mt-1">
+        @healthy_gerasimova • © 2026 Наталья Герасимова.<br>Консультант по питанию и оздоровлению рациона.
+      </p>
+    </footer>
+
+  </main>
+
+  <!-- МОДАЛЬНОЕ ОКНО ПРОСМОТРА ДИПЛОМОВ И СЕРТИФИКАТОВ -->
+  <div id="certModal" 
+       onclick="if(event.target === this) closeCertModal()"
+       class="fixed inset-0 z-50 hidden items-center justify-center bg-stone-900/80 backdrop-blur-xs p-4">
+    <div class="bg-white rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl border border-stone-200 animate-fade-in">
+      <!-- Верхняя панель модального окна -->
+      <div class="flex items-center justify-between px-4 py-3 border-b border-stone-200 bg-stone-50">
+        <h3 id="modalTitle" class="font-serif font-bold text-lg text-stone-900 truncate pr-2">
+          Документ
+        </h3>
+        <button type="button" onclick="closeCertModal()" aria-label="Закрыть"
+                class="w-8 h-8 rounded-full bg-stone-200/80 hover:bg-stone-300 text-stone-700 flex items-center justify-center transition">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Изображение документа в крупном размере -->
+      <div class="p-3 bg-stone-100 flex items-center justify-center max-h-[70vh] overflow-auto">
+        <img id="modalImage" 
+             src="" 
+             alt="Документ об образовании" 
+             class="max-w-full max-h-[64vh] rounded-lg shadow-sm object-contain bg-white"
+             onerror="this.onerror=null; this.src='https://placehold.co/600x420/E5EDE5/3D5241?text=Документ+Натальи+Герасимовой';">
+      </div>
+
+      <!-- Подпись под документом -->
+      <div class="px-4 py-3 bg-white border-t border-stone-100">
+        <p id="modalDesc" class="text-xs text-stone-600 leading-relaxed"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Скрипты для галереи дипломов и карусели отзывов -->
+  <script>
+    // Открытие модального окна с дипломом/сертификатом
+    function openCertModal(imageSrc, title, description) {
+      const modal = document.getElementById('certModal');
+      const modalImg = document.getElementById('modalImage');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalDesc = document.getElementById('modalDesc');
+
+      modalImg.src = imageSrc;
+      modalTitle.textContent = title;
+      modalDesc.textContent = description;
+
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Закрытие модального окна
+    function closeCertModal() {
+      const modal = document.getElementById('certModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    // Закрытие по клавише Escape
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        closeCertModal();
+      }
+    });
+
+    // Прокрутка карусели отзывов кнопками
+    function scrollReviews(direction) {
+      const track = document.getElementById('reviewsTrack');
+      const cardWidth = track.firstElementChild ? track.firstElementChild.offsetWidth + 12 : 300;
+      track.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
+    }
+
+    // Обновление активной точки при свайпе/прокрутке отзывов
+    const reviewsTrack = document.getElementById('reviewsTrack');
+    const dotsContainer = document.getElementById('reviewDots');
+    if (reviewsTrack && dotsContainer) {
+      reviewsTrack.addEventListener('scroll', () => {
+        const scrollLeft = reviewsTrack.scrollLeft;
+        const maxScroll = reviewsTrack.scrollWidth - reviewsTrack.clientWidth;
+        const dots = dotsContainer.children;
+        const total = dots.length;
+        if (maxScroll <= 0) return;
+
+        const activeIndex = Math.min(
+          total - 1,
+          Math.max(0, Math.round((scrollLeft / maxScroll) * (total - 1)))
+        );
+
+        for (let i = 0; i < total; i++) {
+          if (i === activeIndex) {
+            dots[i].classList.remove('w-1.5', 'bg-stone-300');
+            dots[i].classList.add('w-4', 'bg-sage-600');
+          } else {
+            dots[i].classList.remove('w-4', 'bg-sage-600');
+            dots[i].classList.add('w-1.5', 'bg-stone-300');
+          }
+        }
+      }, { passive: true });
+    }
+  </script>
+
+</body>
+</html>
